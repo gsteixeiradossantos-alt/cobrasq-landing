@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>COBRASQ — Recuperação de Crédito</title>
+<meta name="description" content="COBRASQ Recuperadora de Crédito. Transformamos inadimplência em caixa. O principal volta inteiro ao credor — cobramos apenas os acessórios. Atuação nacional, judicial e extrajudicial." />
+
+<!-- Favicon: o Ponto dourado da marca -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A1530'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23C9A961'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* MARINHO & CHAMPAGNE — paleta oficial COBRASQ v3 */
+    --ink:#0A1530;          /* Marinho — fundo escuro / tinta */
+    --graphite:#15224A;     /* Grafite naval */
+    --accent:#C9A961;       /* Champagne — acento metálico (uso ≤8%) */
+    --accent-2:#9C7F40;     /* Ouro velho */
+    --paper:#FFFFFF;        /* Branco — superfície clara (web) */
+    --paper-soft:#F6F5F1;   /* Branco levemente quente p/ alternância */
+
+    --ink-mute:rgba(10,21,48,.58);
+    --ink-line:rgba(10,21,48,.12);
+    --d-text:rgba(255,255,255,.82);
+    --d-mute:rgba(255,255,255,.55);
+    --d-line:rgba(255,255,255,.16);
+    --d-div:rgba(255,255,255,.28);
+
+    --serif:"Fraunces","Times New Roman",serif;
+    --serif-edit:"Instrument Serif","Times New Roman",serif;
+    --sans:"Inter Tight",-apple-system,system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+
+    --maxw:1240px;
+    --pad:clamp(20px,5vw,80px);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--ink)}
+
+  /* ---------- Tipografia ---------- */
+  h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.02em;line-height:1}
+  h2{font-size:clamp(34px,5vw,60px);font-weight:300}
+  h3{font-size:clamp(22px,2.4vw,30px);font-weight:400}
+  em,.it{font-family:var(--serif-edit);font-style:italic;color:var(--accent);font-weight:400}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .mute{color:var(--ink-mute)}
+  .lede{font-family:var(--serif-edit);font-size:clamp(20px,2.2vw,27px);line-height:1.4;font-style:normal}
+
+  /* ---------- Wordmark + símbolo ---------- */
+  .wm{font-family:var(--serif);font-weight:300;letter-spacing:.02em;text-transform:lowercase;line-height:1;display:inline-block}
+  .wm::after{content:".";color:var(--accent)}
+  .dot{width:.62em;height:.62em;border-radius:50%;background:var(--accent);display:inline-block}
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+  section{padding-block:clamp(72px,11vw,140px)}
+  .dark{background:var(--ink);color:#fff}
+  .dark .mute{color:var(--d-mute)}
+  .soft{background:var(--paper-soft)}
+  .meta{display:flex;align-items:center;gap:20px;margin-bottom:48px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)}
+  .dark .meta{color:var(--d-mute)}
+  .meta .n{color:var(--accent)}
+  .meta .ln{flex:1;height:1px;background:var(--ink-line)}
+  .dark .meta .ln{background:var(--d-line)}
+
+  /* ---------- Botões ---------- */
+  .btn{display:inline-flex;align-items:center;gap:.7em;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid transparent;border-radius:2px;cursor:pointer;transition:.25s ease;white-space:nowrap}
+  .btn .ar{transition:transform .25s ease}
+  .btn:hover .ar{transform:translateX(4px)}
+  .btn--gold{background:var(--accent);color:var(--ink);font-weight:500}
+  .btn--gold:hover{background:#d8bd7e}
+  .btn--ghost{background:transparent;border-color:var(--d-div);color:#fff}
+  .btn--ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn--ink{background:var(--ink);color:#fff}
+  .btn--ink:hover{background:var(--graphite)}
+  .btn--line{background:transparent;border-color:var(--ink-line);color:var(--ink)}
+  .btn--line:hover{border-color:var(--accent);color:var(--accent-2)}
+
+  /* ---------- Media / placeholders (viram <img> reais) ---------- */
+  .media{position:relative;overflow:hidden;background:var(--ink);border-radius:3px}
+  .media img{width:100%;height:100%;object-fit:cover}
+  .media.is-empty{background:linear-gradient(140deg,#0A1530,#15224A 70%,#1b2c5c)}
+  .media.is-empty::before{content:"";position:absolute;top:50%;left:50%;width:46px;height:46px;border-radius:50%;background:var(--accent);transform:translate(-50%,-60%);opacity:.92}
+  .media.is-empty::after{content:attr(data-label);position:absolute;left:0;right:0;bottom:18px;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--d-mute)}
+  .r-43{aspect-ratio:4/3}
+  .r-34{aspect-ratio:3/4}
+  .r-11{aspect-ratio:1/1}
+  .r-169{aspect-ratio:16/9}
+
+  /* ---------- NAV ---------- */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s ease}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad)}
+  header.scrolled{background:rgba(10,21,48,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--d-line)}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff}
+  .brand .dot{width:9px;height:9px}
+  .brand .wm{font-size:23px;color:#fff}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--d-text);transition:.2s}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-cta{display:inline-flex}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:1.5px;background:#fff;display:block}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:var(--ink);color:#fff;padding-top:clamp(120px,16vh,180px);padding-bottom:clamp(60px,8vw,90px);overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--d-line) 1px,transparent 1px),linear-gradient(90deg,var(--d-line) 1px,transparent 1px);background-size:64px 64px;opacity:.5;mask-image:radial-gradient(circle at 70% 30%,#000,transparent 72%)}
+  .hero::after{content:"";position:absolute;width:520px;height:520px;right:-120px;top:-120px;background:radial-gradient(circle,rgba(201,169,97,.16),transparent 70%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,70px);align-items:center}
+  .hero h1{font-size:clamp(46px,8vw,104px);font-weight:300;line-height:.96;letter-spacing:-.025em;margin:22px 0}
+  .hero .lede{color:var(--d-text);max-width:30em;margin-bottom:36px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-aside{position:relative}
+  .hero-aside .media{aspect-ratio:4/5;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+  .stat-badge{position:absolute;left:-26px;bottom:-26px;background:var(--ink);border:1px solid var(--d-div);border-radius:3px;padding:18px 22px;backdrop-filter:blur(4px)}
+  .stat-badge .num{font-family:var(--serif);font-size:46px;font-weight:300;line-height:1}
+  .stat-badge .num em{font-style:normal}
+  .stat-badge .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--d-mute);margin-top:6px;max-width:150px}
+
+  /* ---------- Strip de atributos ---------- */
+  .strip{border-top:1px solid var(--d-line);border-bottom:1px solid var(--d-line);background:var(--ink);color:#fff}
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:14px 48px;justify-content:space-between;padding-block:22px}
+  .strip span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--d-text);display:flex;align-items:center;gap:12px}
+  .strip span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+  /* ---------- Modelo (100%) ---------- */
+  .model-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,90px);align-items:center}
+  .bignum{font-family:var(--serif);font-weight:300;font-size:clamp(120px,20vw,240px);line-height:.8;letter-spacing:-.04em}
+  .bignum em{font-style:normal;color:var(--accent)}
+  .bignum-sub{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-top:18px}
+  .model-grid h2{margin-bottom:24px}
+  .model-grid p{margin-bottom:16px;max-width:46em}
+  .defs{margin-top:30px;border-top:1px solid var(--ink-line);padding-top:24px;display:grid;gap:14px}
+  .defs div{display:grid;grid-template-columns:130px 1fr;gap:16px;align-items:baseline}
+  .defs dt{font-family:var(--serif-edit);font-style:italic;color:var(--accent-2);font-size:18px}
+  .defs dd{font-size:14.5px;color:var(--ink-mute)}
+
+  /* ---------- Como funciona ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--d-line);border:1px solid var(--d-line);border-radius:3px;overflow:hidden}
+  .step{background:var(--ink);padding:34px 28px 40px;min-height:230px;display:flex;flex-direction:column}
+  .step .sn{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--accent)}
+  .step h3{margin:18px 0 12px;color:#fff}
+  .step p{font-size:14.5px;color:var(--d-mute);line-height:1.6}
+  .step .sym{margin-top:auto;width:8px;height:8px;border-radius:50%;background:var(--d-div)}
+
+  /* ---------- Faixa full-bleed ---------- */
+  .band{padding:0}
+  .band-media{position:relative;height:clamp(340px,52vh,580px);background:var(--ink);overflow:hidden}
+  .band-media img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+  .band-media.is-empty{background:linear-gradient(140deg,#0A1530,#15224A)}
+  .band-media.is-empty::after{content:attr(data-label);position:absolute;left:0;right:0;bottom:18px;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--d-mute)}
+  .band-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding-inline:var(--pad);background:linear-gradient(90deg,rgba(10,21,48,.88) 0%,rgba(10,21,48,.55) 46%,rgba(10,21,48,.12) 100%)}
+  .band-ov .eyebrow{margin-bottom:14px}
+  .band-ov p{font-family:var(--serif);font-weight:300;color:#fff;font-size:clamp(26px,4vw,52px);line-height:1.05;max-width:15ch;letter-spacing:-.02em}
+  .band-ov p em{font-family:var(--serif-edit)}
+
+  /* ---------- Diferenciais ---------- */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,28px)}
+  .card{border:1px solid var(--ink-line);border-radius:3px;padding:34px 32px;transition:.25s ease;background:var(--paper)}
+  .card:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .card .ci{width:34px;height:34px;border-radius:50%;border:1px solid var(--accent);display:grid;place-items:center;margin-bottom:22px}
+  .card .ci::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  .card h3{margin-bottom:10px}
+  .card p{font-size:14.5px;color:var(--ink-mute)}
+
+  /* ---------- Sobre ---------- */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:center}
+  .about-grid .media{aspect-ratio:4/3;box-shadow:0 40px 80px -50px rgba(0,0,0,.6)}
+  .about-grid h2{margin-bottom:24px}
+  .about-grid p{color:var(--d-text);margin-bottom:16px;max-width:42em}
+  .sign{margin-top:26px}
+  .sign .nm{font-family:var(--serif);font-size:22px}
+  .sign .rl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--d-mute);margin-top:4px}
+
+  /* ---------- CTA final ---------- */
+  .cta{text-align:center;position:relative;overflow:hidden}
+  .cta::after{content:"";position:absolute;width:600px;height:600px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(201,169,97,.12),transparent 68%);pointer-events:none}
+  .cta .wrap{position:relative;z-index:2}
+  .cta h2{font-size:clamp(38px,6vw,76px);max-width:14ch;margin:0 auto 26px}
+  .cta .lede{color:var(--d-text);max-width:34em;margin:0 auto 40px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#fff;border-top:1px solid var(--d-line);padding-block:60px 40px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--d-line)}
+  .foot-brand .wm{font-size:34px;color:#fff}
+  .foot-brand p{color:var(--d-mute);font-size:14px;margin-top:16px;max-width:30em}
+  .foot-col h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-weight:500}
+  .foot-col a,.foot-col p{display:block;color:var(--d-text);font-size:14px;margin-bottom:10px}
+  .foot-col a:hover{color:var(--accent)}
+  .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--d-mute)}
+
+  /* ---------- Reveal ---------- */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+
+  /* ---------- Responsivo ---------- */
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .burger{display:flex}
+    .hero .wrap{grid-template-columns:1fr}
+    .hero-aside{display:none}
+    .model-grid,.about-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr;gap:32px}
+    .defs div{grid-template-columns:110px 1fr}
+  }
+  @media(max-width:520px){
+    .steps{grid-template-columns:1fr}
+    .strip .wrap{flex-direction:column;align-items:flex-start;gap:12px}
+  }
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- símbolo oficial (Ponto) p/ uso via <use> se necessário -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="sym-dot" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="currentColor"/></symbol>
+</defs></svg>
+
+<header id="top">
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="cobrasq.">
+      <span class="dot"></span><span class="wm">cobrasq</span>
+    </a>
+    <div class="nav-links">
+      <a href="#modelo">O modelo</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#diferenciais">Por que a COBRASQ</a>
+      <a href="#sobre">Sobre</a>
+    </div>
+    <a href="#contato" class="btn btn--gold nav-cta">Agendar conversa <span class="ar">→</span></a>
+    <button class="burger" aria-label="menu" onclick="document.querySelector('.nav-links').style.display='flex'"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-main">
+      <span class="eyebrow">Recuperação de crédito · Atuação nacional</span>
+      <h1>Recuperar é <em>restituir</em>.</h1>
+      <p class="lede">Transformamos inadimplência em caixa. O principal volta inteiro ao credor — à COBRASQ cabem apenas os <em>acessórios</em>: juros, correção e multa.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn btn--gold">Agendar conversa <span class="ar">→</span></a>
+        <a href="https://wa.me/5546988226533" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp (46) 98822-6533</a>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <figure class="media" data-label="Hero · ambiente / equipe">
+        <img src="assets/hero.jpg" alt="Equipe COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
+      </figure>
+      <div class="stat-badge">
+        <div class="num"><em>100%</em></div>
+        <div class="lab">do principal volta ao seu caixa</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== STRIP ===================== -->
+<div class="strip">
+  <div class="wrap">
+    <span>Recuperação judicial e extrajudicial</span>
+    <span>Diagnóstico antes da promessa</span>
+    <span>Prestação de contas transparente</span>
+    <span>Atuação em todo o país</span>
+  </div>
+</div>
+
+<!-- ===================== MODELO ===================== -->
+<section id="modelo">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">01</span> <span>O modelo</span> <span class="ln"></span> <span>Recuperar é restituir</span></div>
+    <div class="model-grid">
+      <div class="rv">
+        <div class="bignum"><em>100<span style="font-size:.5em">%</span></em></div>
+        <div class="bignum-sub">do valor principal retorna ao credor</div>
+      </div>
+      <div class="rv">
+        <h2>O capital é seu. <em>O trabalho é nosso.</em></h2>
+        <p class="mute">Na COBRASQ, todo o valor principal — aquilo que o devedor tomou — retorna ao seu caixa. Nossa remuneração vem exclusivamente dos acessórios que a inadimplência acumulou. Você não divide o que é seu.</p>
+        <dl class="defs">
+          <div><dt>principal</dt><dd>o valor original da dívida. Volta integralmente ao credor.</dd></div>
+          <div><dt>acessórios</dt><dd>juros, correção monetária e multa — a remuneração da COBRASQ.</dd></div>
+          <div><dt>mora</dt><dd>o atraso no pagamento; é o que faz os acessórios crescerem.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAIXA · ACORDO ===================== -->
+<section class="band">
+  <figure class="band-media" data-label="Negociação · aperto de mão">
+    <img src="assets/acordo.jpg" alt="Acordo sobre a mesa — COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
+    <div class="band-ov">
+      <span class="eyebrow">Negociação</span>
+      <p>O acordo é o caminho mais curto <em>de volta ao seu caixa.</em></p>
+    </div>
+  </figure>
+</section>
+
+<!-- ===================== COMO FUNCIONA ===================== -->
+<section id="processo" class="dark">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">02</span> <span>Como funciona</span> <span class="ln"></span> <span>Do diagnóstico à prestação de contas</span></div>
+    <div class="steps">
+      <div class="step rv"><div class="sn">01</div><h3>Diagnóstico</h3><p>Analisamos a carteira antes de qualquer promessa. Mapeamos o devedor, o patrimônio e a chance real de recuperação.</p><div class="sym"></div></div>
+      <div class="step rv"><div class="sn">02</div><h3>Extrajudicial</h3><p>Contato, negociação e acordo. A maior parte se resolve no diálogo — mais rápido e menos custoso para todos.</p><div class="sym"></div></div>
+      <div class="step rv"><div class="sn">03</div><h3>Medidas judiciais</h3><p>Quando o diálogo se esgota, ajuizamos e executamos. Localização de bens, penhora e habilitação de crédito.</p><div class="sym"></div></div>
+      <div class="step rv"><div class="sn">04</div><h3>Prestação de contas</h3><p>Repasse do principal e relatório de cada etapa. Você acompanha o que foi feito e o que entrou no caixa.</p><div class="sym"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DIFERENCIAIS ===================== -->
+<section id="diferenciais" class="soft">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">03</span> <span>Por que a COBRASQ</span> <span class="ln"></span></div>
+    <div class="cards">
+      <div class="card rv"><div class="ci"></div><h3>Diagnóstico antes da promessa</h3><p>Não prometemos resultado sem analisar. Mostramos a leitura da carteira primeiro — promessa sem diagnóstico é garantia que ninguém cumpre.</p></div>
+      <div class="card rv"><div class="ci"></div><h3>Judicial e extrajudicial</h3><p>Da negociação amigável à execução em juízo. Conduzimos a recuperação pelo caminho que devolve mais capital, no menor tempo.</p></div>
+      <div class="card rv"><div class="ci"></div><h3>Transparência integral</h3><p>O principal é repassado por inteiro e cada movimento é prestado em conta. Sem letra miúda sobre o que é seu.</p></div>
+      <div class="card rv"><div class="ci"></div><h3>Estrutura e tecnologia</h3><p>Gestão própria de carteiras e processos, com atuação em todo o país. Escala para acompanhar volumes de qualquer porte.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section id="sobre" class="dark">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">04</span> <span>Sobre</span> <span class="ln"></span></div>
+    <div class="about-grid">
+      <figure class="media rv" data-label="Retrato · CEO">
+        <img src="assets/sobre.jpg" alt="Gustavo Teixeira — COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
+      </figure>
+      <div class="rv">
+        <h2>A recuperadora que <em>diagnostica</em> antes de prometer.</h2>
+        <p>A COBRASQ nasceu para tratar a inadimplência como ela é: um ativo parado, não uma perda definitiva. Atuamos na recuperação judicial e extrajudicial de crédito em todo o país, do diálogo com o devedor à execução em juízo.</p>
+        <p>Nosso compromisso é simples e verificável — o capital volta inteiro ao credor, e a nossa remuneração vem do que o atraso acrescentou. Recuperar, para nós, é restituir.</p>
+        <div class="sign">
+          <div class="nm">Gustavo Teixeira</div>
+          <div class="rl">Proprietário · COBRASQ Recuperadora de Crédito</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section id="contato" class="dark cta">
+  <div class="wrap">
+    <span class="eyebrow rv">Fale com a COBRASQ</span>
+    <h2 class="rv" style="margin-top:18px">Sua carteira parada é <em>caixa adormecido.</em></h2>
+    <p class="lede rv">Conte o tamanho e o perfil da sua inadimplência. Devolvemos um diagnóstico — e o caminho para reaver o que é seu.</p>
+    <div class="cta-row rv">
+      <a href="https://wa.me/5546988226533" class="btn btn--gold" target="_blank" rel="noopener">Falar no WhatsApp <span class="ar">→</span></a>
+      <a href="mailto:contato@cobrasq.com.br" class="btn btn--ghost">contato@cobrasq.com.br</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="wm">cobrasq</span>
+        <p>COBRASQ Recuperadora de Crédito e Cobrança Ltda. Recuperação judicial e extrajudicial de crédito, com atuação nacional.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5546988226533" target="_blank" rel="noopener">WhatsApp (46) 98822-6533</a>
+        <a href="mailto:contato@cobrasq.com.br">contato@cobrasq.com.br</a>
+        <a href="https://instagram.com/ccobrasq" target="_blank" rel="noopener">@ccobrasq</a>
+        <a href="https://cobrasq.com.br" target="_blank" rel="noopener">cobrasq.com.br</a>
+      </div>
+      <div class="foot-col">
+        <h4>Sede</h4>
+        <p>Av. Rio Grande do Sul, 380, Sala 201<br>Edifício Mara — Centro<br>Dois Vizinhos / PR · 85660-000</p>
+        <p>CNPJ 34.626.848/0001-42</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr"></span> COBRASQ · Recuperadora de Crédito</span>
+      <span>Recuperar é restituir</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ano
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // nav scrolled
+  const h=document.getElementById('top');
+  const onScroll=()=>h.classList.toggle('scrolled',window.scrollY>40);
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+  // reveal
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
