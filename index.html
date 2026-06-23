@@ -112,8 +112,9 @@
 
   /* ---------- HERO ---------- */
   .hero{position:relative;background:var(--ink);color:#fff;padding-top:clamp(120px,16vh,180px);padding-bottom:clamp(60px,8vw,90px);overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--d-line) 1px,transparent 1px),linear-gradient(90deg,var(--d-line) 1px,transparent 1px);background-size:64px 64px;opacity:.5;mask-image:radial-gradient(circle at 70% 30%,#000,transparent 72%)}
-  .hero::after{content:"";position:absolute;width:520px;height:520px;right:-120px;top:-120px;background:radial-gradient(circle,rgba(201,169,97,.16),transparent 70%);pointer-events:none}
+  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--d-line) 1px,transparent 1px),linear-gradient(90deg,var(--d-line) 1px,transparent 1px);background-size:64px 64px;opacity:.5;-webkit-mask-image:radial-gradient(circle at 70% 30%,#000,transparent 72%);mask-image:radial-gradient(circle at 70% 30%,#000,transparent 72%);background-position:calc(var(--gx,0)*1px) calc(var(--gy,0)*1px);transition:background-position .6s cubic-bezier(.2,.8,.2,1)}
+  .hero::after{content:"";position:absolute;width:560px;height:560px;right:-120px;top:-130px;background:radial-gradient(circle,rgba(201,169,97,.18),transparent 70%);pointer-events:none;animation:aurora 16s ease-in-out infinite;will-change:transform,opacity}
+  @keyframes aurora{0%{transform:translate(0,0) scale(1);opacity:.5}50%{transform:translate(-46px,34px) scale(1.18);opacity:.85}100%{transform:translate(24px,-22px) scale(1.02);opacity:.55}}
   .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,70px);align-items:center}
   .hero h1{font-size:clamp(46px,8vw,104px);font-weight:300;line-height:.96;letter-spacing:-.025em;margin:22px 0}
   .hero .lede{color:var(--d-text);max-width:30em;margin-bottom:36px}
@@ -198,6 +199,16 @@
   .foot-col a:hover{color:var(--accent)}
   .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--d-mute)}
 
+  /* ---------- Indicadores (KPIs animados) ---------- */
+  .kpis{background:var(--ink);color:#fff;border-top:1px solid var(--d-line);border-bottom:1px solid var(--d-line);padding-block:clamp(42px,6vw,76px)}
+  .kpis .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,60px)}
+  .kpi{text-align:center;position:relative}
+  .kpi + .kpi::before{content:"";position:absolute;left:calc(-1*clamp(10px,2vw,30px));top:50%;transform:translateY(-50%);width:1px;height:58px;background:var(--d-line)}
+  .kpi .num{font-family:var(--serif);font-weight:300;font-size:clamp(40px,6vw,74px);line-height:1;letter-spacing:-.02em}
+  .kpi .num .u{color:var(--accent);font-size:.5em;font-style:italic;font-family:var(--serif-edit)}
+  .kpi .lab{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--d-mute);margin-top:16px}
+  @media(max-width:760px){.kpis .wrap{grid-template-columns:1fr;gap:36px}.kpi+.kpi::before{display:none}}
+
   /* ---------- Reveal ---------- */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .rv.in{opacity:1;transform:none}
@@ -218,7 +229,7 @@
     .steps{grid-template-columns:1fr}
     .strip .wrap{flex-direction:column;align-items:flex-start;gap:12px}
   }
-  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero::after{animation:none}.hero::before{transition:none}}
 </style>
 </head>
 <body>
@@ -261,22 +272,30 @@
         <img src="assets/hero.jpg" alt="Equipe COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
       </figure>
       <div class="stat-badge">
-        <div class="num"><em>100%</em></div>
+        <div class="num"><em><span class="count" data-to="100" data-dec="0">0</span>%</em></div>
         <div class="lab">do principal volta ao seu caixa</div>
       </div>
     </aside>
   </div>
 </section>
 
-<!-- ===================== STRIP ===================== -->
-<div class="strip">
+<!-- ===================== INDICADORES ===================== -->
+<section class="kpis">
   <div class="wrap">
-    <span>Recuperação extrajudicial</span>
-    <span>Diagnóstico antes da promessa</span>
-    <span>Nome limpo ao devedor</span>
-    <span>Atuação nacional</span>
+    <div class="kpi rv">
+      <div class="num"><span class="u">R$ </span><span class="count" data-to="2.5" data-dec="1">0,0</span> <span class="u">mi</span></div>
+      <div class="lab">Recuperado e devolvido a credores</div>
+    </div>
+    <div class="kpi rv">
+      <div class="num"><span class="count" data-to="100" data-dec="0">0</span><span class="u">%</span></div>
+      <div class="lab">Do principal de volta ao caixa</div>
+    </div>
+    <div class="kpi rv">
+      <div class="num">Extrajudicial</div>
+      <div class="lab">Negociação e acordo, sem litígio</div>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- ===================== MODELO ===================== -->
 <section id="modelo">
@@ -284,7 +303,7 @@
     <div class="meta rv"><span class="n">01</span> <span>O modelo</span> <span class="ln"></span> <span>Recuperar é restituir</span></div>
     <div class="model-grid">
       <div class="rv">
-        <div class="bignum"><em>100<span style="font-size:.5em">%</span></em></div>
+        <div class="bignum"><em><span class="count" data-to="100" data-dec="0">0</span><span style="font-size:.5em">%</span></em></div>
         <div class="bignum-sub">do valor principal retorna ao credor</div>
       </div>
       <div class="rv">
@@ -409,6 +428,25 @@
   // reveal
   const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // ---- movimento vivo (respeita prefers-reduced-motion) ----
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fmt=(v,dec)=>v.toLocaleString('pt-BR',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  function countUp(el){
+    const to=parseFloat(el.dataset.to), dec=parseInt(el.dataset.dec||'0',10);
+    if(reduce){el.textContent=fmt(to,dec);return;}
+    const dur=1500, t0=performance.now();
+    (function tick(now){let p=Math.min(1,(now-t0)/dur);p=1-Math.pow(1-p,3);el.textContent=fmt(to*p,dec);if(p<1)requestAnimationFrame(tick);else el.textContent=fmt(to,dec);})(performance.now());
+  }
+  const cio=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target)}}),{threshold:.6});
+  document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+
+  // parallax sutil da grade do hero (só mouse fino, sem reduce)
+  const hero=document.querySelector('.hero');
+  if(hero && !reduce && matchMedia('(pointer:fine)').matches){
+    hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;hero.style.setProperty('--gx',(x*22).toFixed(1));hero.style.setProperty('--gy',(y*22).toFixed(1));},{passive:true});
+    hero.addEventListener('mouseleave',()=>{hero.style.setProperty('--gx','0');hero.style.setProperty('--gy','0');});
+  }
 </script>
 </body>
 </html>
