@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>COBRASQ — Recuperação de Crédito</title>
-<meta name="description" content="COBRASQ — Recuperadora de crédito. Cobrança extrajudicial que transforma inadimplência em caixa para o credor e devolve o nome limpo ao devedor. Atuação nacional." />
+<title>COBRASQ · Recuperação de Crédito</title>
+<meta name="description" content="COBRASQ ·Recuperadora de crédito. Cobrança extrajudicial que transforma inadimplência em caixa para o credor e devolve o nome limpo ao devedor. Atuação nacional." />
 <link rel="canonical" href="https://cobrasq.com.br/" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cobrasq.com.br/" />
-<meta property="og:title" content="COBRASQ — Recuperar é restituir" />
+<meta property="og:title" content="COBRASQ ·Recuperar é restituir" />
 <meta property="og:description" content="Recuperação de crédito por cobrança extrajudicial: o principal volta inteiro ao credor e o devedor recupera o nome limpo." />
 <meta property="og:image" content="https://cobrasq.com.br/assets/og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="pt_BR" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="COBRASQ — Recuperar é restituir" />
+<meta name="twitter:title" content="COBRASQ ·Recuperar é restituir" />
 <meta name="twitter:description" content="Recuperação de crédito extrajudicial. O principal volta inteiro ao credor; o devedor recupera o nome." />
 <meta name="twitter:image" content="https://cobrasq.com.br/assets/og.jpg" />
 <link rel="preload" as="image" href="assets/hero-poltrona.jpg" />
@@ -216,13 +216,14 @@
 
   /* ---------- Indicadores (KPIs animados) ---------- */
   .kpis{background:var(--ink);color:#fff;border-top:1px solid var(--d-line);border-bottom:1px solid var(--d-line);padding-block:clamp(42px,6vw,76px)}
-  .kpis .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,60px)}
+  .kpis .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(22px,3vw,40px)}
   .kpi{text-align:center;position:relative}
-  .kpi + .kpi::before{content:"";position:absolute;left:calc(-1*clamp(10px,2vw,30px));top:50%;transform:translateY(-50%);width:1px;height:58px;background:var(--d-line)}
-  .kpi .num{font-family:var(--serif);font-weight:300;font-size:clamp(40px,6vw,74px);line-height:1;letter-spacing:-.02em}
+  .kpi + .kpi::before{content:"";position:absolute;left:calc(-1*clamp(11px,1.5vw,20px));top:50%;transform:translateY(-50%);width:1px;height:52px;background:var(--d-line)}
+  .kpi .num{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.2vw,58px);line-height:1;letter-spacing:-.02em}
   .kpi .num .u{color:var(--accent);font-size:.5em;font-style:italic;font-family:var(--serif-edit)}
-  .kpi .lab{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--d-mute);margin-top:16px}
-  @media(max-width:760px){.kpis .wrap{grid-template-columns:1fr;gap:36px}.kpi+.kpi::before{display:none}}
+  .kpi .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--d-mute);margin-top:14px}
+  @media(max-width:900px){.kpis .wrap{grid-template-columns:repeat(2,1fr);gap:40px 24px}.kpi:nth-child(odd)::before{display:none}}
+  @media(max-width:520px){.kpis .wrap{grid-template-columns:1fr}.kpi+.kpi::before{display:none}}
 
   /* ---------- Nav: acesso ao sistema + painel mobile ---------- */
   .nav-actions{display:flex;align-items:center;gap:14px}
@@ -277,6 +278,15 @@
   .wa-fab svg{width:27px;height:27px;fill:var(--accent);transition:.25s ease}
   .wa-fab:hover svg{fill:var(--ink)}
   @media(prefers-reduced-motion:reduce){.wa-fab{transition:opacity .2s ease}}
+
+  /* ---------- Nome do CEO sobre a foto do hero ---------- */
+  .hero-name{position:absolute;right:16px;bottom:16px;text-align:right;z-index:2}
+  .hero-name .nm{display:block;font-family:var(--serif);font-size:19px;color:#fff;line-height:1;text-shadow:0 2px 12px rgba(0,0,0,.75)}
+  .hero-name .rl{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-top:6px;text-shadow:0 2px 12px rgba(0,0,0,.75)}
+
+  /* ---------- Foto da fachada (Localização) ---------- */
+  .loc-photo{width:100%;aspect-ratio:21/9;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 30px 60px -45px rgba(0,0,0,.4);margin-bottom:clamp(26px,4vw,48px)}
+  .loc-photo img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
 
   /* ---------- Reveal ---------- */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -342,7 +352,7 @@
     <div class="hero-main">
       <span class="eyebrow">Recuperação de crédito · Cobrança extrajudicial</span>
       <h1>Recuperar é <em>restituir</em>.</h1>
-      <p class="lede">Transformamos inadimplência em caixa. O principal volta inteiro ao credor — à COBRASQ cabem apenas os <em>acessórios</em>: juros, correção e multa.</p>
+      <p class="lede">Transformamos inadimplência em caixa. O principal volta inteiro ao credor. À COBRASQ cabem apenas os <em>acessórios</em>: juros, correção e multa.</p>
       <div class="hero-cta">
         <a href="#contato" class="btn btn--gold">Agendar conversa <span class="ar">→</span></a>
         <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--ghost" target="_blank" rel="noopener">Negocie sua dívida</a>
@@ -356,6 +366,7 @@
         <div class="num"><em><span class="count" data-to="100" data-dec="0">0</span>%</em></div>
         <div class="lab">do principal volta ao seu caixa</div>
       </div>
+      <div class="hero-name"><span class="nm">Gustavo Teixeira</span><span class="rl">Fundador &amp; CEO</span></div>
     </aside>
   </div>
 </section>
@@ -375,6 +386,10 @@
       <div class="num">Extrajudicial</div>
       <div class="lab">Negociação e acordo, sem litígio</div>
     </div>
+    <div class="kpi rv">
+      <div class="num">Desde 2019</div>
+      <div class="lab">No mercado de crédito</div>
+    </div>
   </div>
 </section>
 
@@ -389,10 +404,10 @@
       </div>
       <div class="rv">
         <h2>O capital é seu. <em>O trabalho é nosso.</em></h2>
-        <p class="mute">Na COBRASQ, todo o valor principal — aquilo que o devedor tomou — retorna ao seu caixa. Nossa remuneração vem exclusivamente dos acessórios que a inadimplência acumulou. Você não divide o que é seu.</p>
+        <p class="mute">Na COBRASQ, todo o valor principal, aquilo que o devedor tomou, retorna ao seu caixa. Nossa remuneração vem exclusivamente dos acessórios que a inadimplência acumulou. Você não divide o que é seu.</p>
         <dl class="defs">
           <div><dt>principal</dt><dd>o valor original da dívida. Volta integralmente ao credor.</dd></div>
-          <div><dt>acessórios</dt><dd>juros, correção monetária e multa — a remuneração da COBRASQ.</dd></div>
+          <div><dt>acessórios</dt><dd>juros, correção monetária e multa: a remuneração da COBRASQ.</dd></div>
           <div><dt>mora</dt><dd>o atraso no pagamento; é o que faz os acessórios crescerem.</dd></div>
         </dl>
       </div>
@@ -417,9 +432,9 @@
     <div class="meta rv"><span class="n">02</span> <span>Como funciona</span> <span class="ln"></span> <span>Do diagnóstico à prestação de contas</span></div>
     <div class="steps">
       <div class="step rv"><div class="sn">01</div><h3>Diagnóstico</h3><p>Analisamos a carteira antes de qualquer promessa. Mapeamos o devedor e a capacidade real de pagamento.</p><div class="sym"></div></div>
-      <div class="step rv"><div class="sn">02</div><h3>Localização e contato</h3><p>Encontramos o devedor e reabrimos o canal — telefone, e-mail, mensagem — com abordagem correta e respeitosa.</p><div class="sym"></div></div>
+      <div class="step rv"><div class="sn">02</div><h3>Localização e contato</h3><p>Encontramos o devedor e reabrimos o canal: telefone, e-mail, mensagem, com abordagem correta e respeitosa.</p><div class="sym"></div></div>
       <div class="step rv"><div class="sn">03</div><h3>Negociação e acordo</h3><p>Construímos condições que cabem no bolso do devedor e devolvem o capital ao credor.</p><div class="sym"></div></div>
-      <div class="step rv"><div class="sn">04</div><h3>Quitação e nome limpo</h3><p>Cumprido o acordo, o credor recebe e o devedor sai da inadimplência — com a prestação de contas de cada etapa.</p><div class="sym"></div></div>
+      <div class="step rv"><div class="sn">04</div><h3>Quitação e nome limpo</h3><p>Cumprido o acordo, o credor recebe e o devedor sai da inadimplência, com a prestação de contas de cada etapa.</p><div class="sym"></div></div>
     </div>
   </div>
 </section>
@@ -429,8 +444,8 @@
   <div class="wrap">
     <div class="meta rv"><span class="n">03</span> <span>Por que a COBRASQ</span> <span class="ln"></span></div>
     <div class="cards">
-      <div class="card rv"><div class="ci"></div><h3>Diagnóstico antes da promessa</h3><p>Não prometemos resultado sem analisar. Mostramos a leitura da carteira primeiro — promessa sem diagnóstico é garantia que ninguém cumpre.</p></div>
-      <div class="card rv"><div class="ci"></div><h3>100% extrajudicial</h3><p>Recuperação por negociação e acordo, sem litígio. Mais rápida, menos desgaste — e preserva a relação com o cliente inadimplente.</p></div>
+      <div class="card rv"><div class="ci"></div><h3>Diagnóstico antes da promessa</h3><p>Não prometemos resultado sem analisar. Mostramos a leitura da carteira primeiro. Promessa sem diagnóstico é garantia que ninguém cumpre.</p></div>
+      <div class="card rv"><div class="ci"></div><h3>100% extrajudicial</h3><p>Recuperação por negociação e acordo, sem litígio. Mais rápida, menos desgaste, e preserva a relação com o cliente inadimplente.</p></div>
       <div class="card rv"><div class="ci"></div><h3>Transparência integral</h3><p>O principal é repassado por inteiro e cada movimento é prestado em conta. Sem letra miúda sobre o que é seu.</p></div>
       <div class="card rv"><div class="ci"></div><h3>Recuperação que restaura</h3><p>Para o credor, o capital de volta. Para o devedor, o nome limpo e o crédito de novo. Recuperar é reconstruir os dois lados.</p></div>
     </div>
@@ -447,7 +462,7 @@
       </figure>
       <div class="rv">
         <h2>A recuperadora que <em>diagnostica</em> antes de prometer.</h2>
-        <p>A COBRASQ trata a inadimplência como ela é: um ativo parado, não uma perda definitiva. Fazemos a recuperação extrajudicial de crédito em todo o país — pela análise, pelo diálogo e pelo acordo.</p>
+        <p>Desde 2019, a COBRASQ trata a inadimplência como ela é: um ativo parado, não uma perda definitiva. Fazemos a recuperação extrajudicial de crédito em todo o país, pela análise, pelo diálogo e pelo acordo.</p>
         <p>Nosso compromisso é simples e verificável: o capital volta inteiro ao credor, e o devedor sai da inadimplência com o nome limpo. Recuperar, para nós, é restituir os dois lados.</p>
         <div class="sign">
           <div class="nm">Gustavo Teixeira</div>
@@ -458,17 +473,49 @@
   </div>
 </section>
 
+<!-- ===================== DEPOIMENTOS ===================== -->
+<section id="depoimentos" class="soft">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">05</span> <span>Depoimentos</span> <span class="ln"></span></div>
+    <div class="reviews-head rv">
+      <div class="big">5,0</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="sub">3 avaliações no Google</div>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="review rv">
+        <div class="stars">★★★★★</div>
+        <q>Estamos satisfeitos, conseguindo vários acordos que estavam parados há algum tempo.</q>
+        <div class="who">João André Portes</div>
+      </div>
+      <div class="review rv">
+        <div class="stars">★★★★★</div>
+        <q>Profissionais de altíssimo gabarito. Confiança e credibilidade é o nome que atribuo a eles.</q>
+        <div class="who">Alfa Sierra Combat</div>
+      </div>
+      <div class="review rv">
+        <div class="stars">★★★★★</div>
+        <q>Pessoas maravilhosas que, em todo o meu tempo de financeiro, contas a receber e cobrança…</q>
+        <div class="who">Sustsantos Gomes</div>
+      </div>
+    </div>
+    <div class="rv" style="margin-top:38px"><a href="https://www.google.com/maps/search/?api=1&query=COBRASQ%20Recuperadora%20de%20Cr%C3%A9dito%20Dois%20Vizinhos" class="btn btn--line" target="_blank" rel="noopener">Ver avaliações no Google <span class="ar">→</span></a></div>
+  </div>
+</section>
+
 <!-- ===================== FAQ ===================== -->
 <section id="faq" class="dark">
   <div class="wrap">
-    <div class="meta rv"><span class="n">05</span> <span>Perguntas frequentes</span> <span class="ln"></span></div>
+    <div class="meta rv"><span class="n">06</span> <span>Perguntas frequentes</span> <span class="ln"></span></div>
     <div class="faq rv">
-      <details><summary>Como funciona a remuneração?<span class="pl"></span></summary><p>O valor principal volta integralmente ao credor. A COBRASQ é remunerada apenas pelos acessórios — juros, correção e multa — que a inadimplência acumulou. Você não divide o que é seu.</p></details>
+      <details><summary>Como funciona a remuneração?<span class="pl"></span></summary><p>O valor principal volta integralmente ao credor. A COBRASQ é remunerada apenas pelos acessórios (juros, correção e multa) que a inadimplência acumulou. Você não divide o que é seu.</p></details>
       <details><summary>Vocês prestam contas do que é recuperado?<span class="pl"></span></summary><p>Sim. Cada etapa é registrada e o repasse do principal é prestado em conta: você acompanha o que foi feito e o que entrou no caixa.</p></details>
       <details><summary>Atendem em todo o Brasil?<span class="pl"></span></summary><p>Sim. A atuação é nacional, com sede em Dois Vizinhos/PR. Todo o contato pode ser feito a distância.</p></details>
-      <details><summary>Sou devedor. Como negocio minha dívida?<span class="pl"></span></summary><p>Fale com a gente pelo WhatsApp. Construímos condições que cabem no seu bolso — e, com o acordo cumprido, seu nome sai da inadimplência.</p></details>
+      <details><summary>Sou devedor. Como negocio minha dívida?<span class="pl"></span></summary><p>Fale com a gente pelo WhatsApp. Construímos condições que cabem no seu bolso e, com o acordo cumprido, seu nome sai da inadimplência.</p></details>
       <details><summary>Negociar com a COBRASQ limpa meu nome?<span class="pl"></span></summary><p>Sim. Quitado o acordo, providenciamos a baixa da negativação e você volta a ter crédito. Recuperar, para nós, é restituir os dois lados.</p></details>
-      <details><summary>A abordagem é segura e respeitosa?<span class="pl"></span></summary><p>Sempre. Cobramos de forma correta e dentro da lei — sem constrangimento e sem cobrança de dívida indevida ou prescrita.</p></details>
+      <details><summary>A abordagem é segura e respeitosa?<span class="pl"></span></summary><p>Sempre. Cobramos de forma correta e dentro da lei, sem constrangimento e sem cobrança de dívida indevida ou prescrita.</p></details>
     </div>
   </div>
 </section>
@@ -476,14 +523,15 @@
 <!-- ===================== LOCALIZAÇÃO ===================== -->
 <section id="localizacao" class="soft">
   <div class="wrap">
-    <div class="meta rv"><span class="n">06</span> <span>Localização</span> <span class="ln"></span></div>
+    <div class="meta rv"><span class="n">07</span> <span>Localização</span> <span class="ln"></span></div>
+    <figure class="loc-photo rv"><img src="assets/fachada.jpg" alt="Fachada da COBRASQ no Edifício Mara, Dois Vizinhos/PR" loading="lazy"></figure>
     <div class="loc-grid">
       <div class="map-frame rv">
-        <iframe title="Mapa — COBRASQ, Dois Vizinhos/PR" src="https://www.google.com/maps?q=-25.7502273,-53.0560522&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <iframe title="Mapa · COBRASQ, Dois Vizinhos/PR" src="https://www.google.com/maps?q=-25.7502273,-53.0560522&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
       <div class="loc-info rv">
         <h2>Onde a COBRASQ <em>fica.</em></h2>
-        <p class="addr"><b>COBRASQ Recuperadora de Crédito</b><br>Av. Rio Grande do Sul, 380, Sala 201<br>Edifício Mara — Centro<br>Dois Vizinhos / PR · CEP 85660-000</p>
+        <p class="addr"><b>COBRASQ Recuperadora de Crédito</b><br>Av. Rio Grande do Sul, 380, Sala 201<br>Edifício Mara, Centro<br>Dois Vizinhos / PR · CEP 85660-000</p>
         <div class="hours">Atuação nacional · atendimento de segunda a sexta</div>
         <a href="https://www.google.com/maps/dir/?api=1&destination=-25.7502273,-53.0560522" class="btn btn--line" target="_blank" rel="noopener">Como chegar <span class="ar">→</span></a>
       </div>
@@ -496,7 +544,7 @@
   <div class="wrap">
     <span class="eyebrow rv">Fale com a COBRASQ</span>
     <h2 class="rv" style="margin-top:18px">Sua carteira parada é <em>caixa adormecido.</em></h2>
-    <p class="lede rv">Conte o tamanho e o perfil da sua inadimplência. Devolvemos um diagnóstico — e o caminho para reaver o que é seu.</p>
+    <p class="lede rv">Conte o tamanho e o perfil da sua inadimplência. Devolvemos um diagnóstico e o caminho para reaver o que é seu.</p>
     <div class="cta-row rv">
       <a href="https://wa.me/5546988226533" class="btn btn--gold" target="_blank" rel="noopener">Falar no WhatsApp <span class="ar">→</span></a>
       <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--ghost" target="_blank" rel="noopener">Negocie sua dívida</a>
@@ -522,7 +570,7 @@
       </div>
       <div class="foot-col">
         <h4>Sede</h4>
-        <p>Av. Rio Grande do Sul, 380, Sala 201<br>Edifício Mara — Centro<br>Dois Vizinhos / PR · 85660-000</p>
+        <p>Av. Rio Grande do Sul, 380, Sala 201<br>Edifício Mara, Centro<br>Dois Vizinhos / PR · 85660-000</p>
         <p>CNPJ 34.626.848/0001-42</p>
       </div>
     </div>
