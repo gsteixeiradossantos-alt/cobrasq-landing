@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>COBRASQ — Recuperação de Crédito</title>
 <meta name="description" content="COBRASQ — Recuperadora de crédito. Cobrança extrajudicial que transforma inadimplência em caixa para o credor e devolve o nome limpo ao devedor. Atuação nacional." />
+<link rel="canonical" href="https://cobrasq.com.br/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cobrasq.com.br/" />
+<meta property="og:title" content="COBRASQ — Recuperar é restituir" />
+<meta property="og:description" content="Recuperação de crédito por cobrança extrajudicial: o principal volta inteiro ao credor e o devedor recupera o nome limpo." />
+<meta property="og:image" content="https://cobrasq.com.br/assets/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="COBRASQ — Recuperar é restituir" />
+<meta name="twitter:description" content="Recuperação de crédito extrajudicial. O principal volta inteiro ao credor; o devedor recupera o nome." />
+<meta name="twitter:image" content="https://cobrasq.com.br/assets/og.jpg" />
+<link rel="preload" as="image" href="assets/hero.jpg" />
 
 <!-- Favicon: o Ponto dourado da marca -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A1530'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23C9A961'/%3E%3C/svg%3E" />
@@ -209,6 +223,60 @@
   .kpi .lab{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--d-mute);margin-top:16px}
   @media(max-width:760px){.kpis .wrap{grid-template-columns:1fr;gap:36px}.kpi+.kpi::before{display:none}}
 
+  /* ---------- Nav: acesso ao sistema + painel mobile ---------- */
+  .nav-actions{display:flex;align-items:center;gap:14px}
+  .nav-sys{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--d-text);border:1px solid var(--d-line);border-radius:2px;padding:11px 16px;transition:.2s ease;white-space:nowrap}
+  .nav-sys:hover{border-color:var(--accent);color:var(--accent)}
+  .mobile-panel{display:none}
+  @media(max-width:900px){
+    .nav-actions{display:none}
+    .mobile-panel{position:fixed;inset:0;background:rgba(10,21,48,.98);backdrop-filter:blur(16px);transform:translateY(-100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);z-index:49;padding:88px var(--pad) 40px;display:flex;flex-direction:column;overflow-y:auto}
+    .mobile-panel.open{transform:translateY(0)}
+    .mobile-panel a.mlink{color:#fff;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:15px 0;border-bottom:1px solid var(--d-line)}
+    .mobile-panel .btn{margin-top:16px;justify-content:center}
+  }
+
+  /* ---------- FAQ (fundo escuro) ---------- */
+  .faq{max-width:880px;margin:0 auto}
+  .faq details{border-bottom:1px solid var(--d-line)}
+  .faq summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:var(--serif);font-size:clamp(18px,2.2vw,23px);font-weight:400;color:#fff}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .pl{position:relative;width:18px;height:18px;flex:none}
+  .faq summary .pl::before,.faq summary .pl::after{content:"";position:absolute;background:var(--accent);transition:.25s ease}
+  .faq summary .pl::before{top:8px;left:0;width:18px;height:1.5px}
+  .faq summary .pl::after{top:0;left:8px;width:1.5px;height:18px}
+  .faq details[open] summary .pl::after{transform:rotate(90deg);opacity:0}
+  .faq details p{padding:0 42px 26px 0;color:var(--d-text);font-size:15px;line-height:1.7;max-width:72ch}
+  .faq details p em{color:var(--accent)}
+
+  /* ---------- Localização (mapa) ---------- */
+  .loc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center}
+  .map-frame{position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 30px 60px -40px rgba(0,0,0,.45)}
+  .map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .loc-info h2{margin-bottom:16px}
+  .loc-info .addr{color:var(--ink-mute);font-size:16px;line-height:1.75;font-style:normal}
+  .loc-info .addr b{color:var(--ink);font-weight:600}
+  .loc-info .hours{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin:18px 0 26px}
+  @media(max-width:760px){.loc-grid{grid-template-columns:1fr}}
+
+  /* ---------- Depoimentos (fundo claro) ---------- */
+  .reviews-head{display:flex;align-items:center;gap:18px;margin-bottom:36px}
+  .reviews-head .big{font-family:var(--serif);font-size:50px;font-weight:300;line-height:1;color:var(--ink)}
+  .reviews-head .stars{color:var(--accent);letter-spacing:3px;font-size:17px}
+  .reviews-head .sub{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-top:4px}
+  .review{display:flex;flex-direction:column;gap:16px;padding:30px;border:1px solid var(--ink-line);border-radius:3px;background:var(--paper)}
+  .review .stars{color:var(--accent);letter-spacing:2px;font-size:14px}
+  .review q{font-family:var(--serif-edit);font-style:italic;font-size:19px;line-height:1.5;color:var(--ink);quotes:none}
+  .review .who{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-top:auto}
+
+  /* ---------- WhatsApp flutuante ---------- */
+  .wa-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:var(--ink);border:1px solid var(--accent);display:grid;place-items:center;box-shadow:0 14px 34px -10px rgba(0,0,0,.6);opacity:0;transform:translateY(16px) scale(.92);transition:.35s cubic-bezier(.2,.8,.2,1)}
+  .wa-fab.show{opacity:1;transform:none}
+  .wa-fab:hover{background:var(--accent)}
+  .wa-fab svg{width:27px;height:27px;fill:var(--accent);transition:.25s ease}
+  .wa-fab:hover svg{fill:var(--ink)}
+  @media(prefers-reduced-motion:reduce){.wa-fab{transition:opacity .2s ease}}
+
   /* ---------- Reveal ---------- */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .rv.in{opacity:1;transform:none}
@@ -250,9 +318,21 @@
       <a href="#diferenciais">Por que a COBRASQ</a>
       <a href="#sobre">Sobre</a>
     </div>
-    <a href="#contato" class="btn btn--gold nav-cta">Agendar conversa <span class="ar">→</span></a>
-    <button class="burger" aria-label="menu" onclick="document.querySelector('.nav-links').style.display='flex'"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <a href="https://cobrasq-faturamento.vercel.app/" class="nav-sys" target="_blank" rel="noopener">Acesso ao sistema ↗</a>
+      <a href="#contato" class="btn btn--gold nav-cta">Agendar conversa <span class="ar">→</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-panel"><span></span><span></span><span></span></button>
   </nav>
+  <div class="mobile-panel" id="mobile-panel">
+    <a class="mlink" href="#modelo">O modelo</a>
+    <a class="mlink" href="#processo">Como funciona</a>
+    <a class="mlink" href="#diferenciais">Por que a COBRASQ</a>
+    <a class="mlink" href="#sobre">Sobre</a>
+    <a class="mlink" href="https://cobrasq-faturamento.vercel.app/" target="_blank" rel="noopener">Acesso ao sistema ↗</a>
+    <a href="#contato" class="btn btn--gold">Agendar conversa <span class="ar">→</span></a>
+    <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--ghost" target="_blank" rel="noopener">Negocie sua dívida</a>
+  </div>
 </header>
 
 <!-- ===================== HERO ===================== -->
@@ -264,12 +344,12 @@
       <p class="lede">Transformamos inadimplência em caixa. O principal volta inteiro ao credor — à COBRASQ cabem apenas os <em>acessórios</em>: juros, correção e multa.</p>
       <div class="hero-cta">
         <a href="#contato" class="btn btn--gold">Agendar conversa <span class="ar">→</span></a>
-        <a href="https://wa.me/5546988226533" class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp (46) 98822-6533</a>
+        <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--ghost" target="_blank" rel="noopener">Negocie sua dívida</a>
       </div>
     </div>
     <aside class="hero-aside">
       <figure class="media" data-label="Hero · ambiente / equipe">
-        <img src="assets/hero.jpg" alt="Equipe COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
+        <img src="assets/hero.jpg" alt="Gustavo Teixeira — COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
       </figure>
       <div class="stat-badge">
         <div class="num"><em><span class="count" data-to="100" data-dec="0">0</span>%</em></div>
@@ -377,6 +457,40 @@
   </div>
 </section>
 
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="dark">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">05</span> <span>Perguntas frequentes</span> <span class="ln"></span></div>
+    <div class="faq rv">
+      <details><summary>A COBRASQ faz cobrança judicial?<span class="pl"></span></summary><p>Não. Atuamos exclusivamente na recuperação <em>extrajudicial</em> — por negociação e acordo. É mais rápida, menos custosa e preserva a relação com o cliente inadimplente.</p></details>
+      <details><summary>Como funciona a remuneração?<span class="pl"></span></summary><p>O valor principal volta integralmente ao credor. A COBRASQ é remunerada apenas pelos acessórios — juros, correção e multa — que a inadimplência acumulou. Você não divide o que é seu.</p></details>
+      <details><summary>Vocês prestam contas do que é recuperado?<span class="pl"></span></summary><p>Sim. Cada etapa é registrada e o repasse do principal é prestado em conta: você acompanha o que foi feito e o que entrou no caixa.</p></details>
+      <details><summary>Atendem em todo o Brasil?<span class="pl"></span></summary><p>Sim. A atuação é nacional, com sede em Dois Vizinhos/PR. Todo o contato pode ser feito a distância.</p></details>
+      <details><summary>Sou devedor. Como negocio minha dívida?<span class="pl"></span></summary><p>Fale com a gente pelo WhatsApp. Construímos condições que cabem no seu bolso — e, com o acordo cumprido, seu nome sai da inadimplência.</p></details>
+      <details><summary>Negociar com a COBRASQ limpa meu nome?<span class="pl"></span></summary><p>Sim. Quitado o acordo, providenciamos a baixa da negativação e você volta a ter crédito. Recuperar, para nós, é restituir os dois lados.</p></details>
+      <details><summary>A abordagem é segura e respeitosa?<span class="pl"></span></summary><p>Sempre. Cobramos de forma correta e dentro da lei — sem constrangimento e sem cobrança de dívida indevida ou prescrita.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOCALIZAÇÃO ===================== -->
+<section id="localizacao" class="soft">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">06</span> <span>Localização</span> <span class="ln"></span></div>
+    <div class="loc-grid">
+      <div class="map-frame rv">
+        <iframe title="Mapa — COBRASQ, Dois Vizinhos/PR" src="https://www.google.com/maps?q=Av.%20Rio%20Grande%20do%20Sul%2C%20380%2C%20Dois%20Vizinhos%20-%20PR%2C%2085660-000&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div class="loc-info rv">
+        <h2>Onde a COBRASQ <em>fica.</em></h2>
+        <p class="addr"><b>COBRASQ Recuperadora de Crédito</b><br>Av. Rio Grande do Sul, 380, Sala 201<br>Edifício Mara — Centro<br>Dois Vizinhos / PR · CEP 85660-000</p>
+        <div class="hours">Atuação nacional · atendimento de segunda a sexta</div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Rio%20Grande%20do%20Sul%2C%20380%2C%20Dois%20Vizinhos%20-%20PR%2C%2085660-000" class="btn btn--line" target="_blank" rel="noopener">Como chegar <span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== CTA ===================== -->
 <section id="contato" class="dark cta">
   <div class="wrap">
@@ -385,6 +499,7 @@
     <p class="lede rv">Conte o tamanho e o perfil da sua inadimplência. Devolvemos um diagnóstico — e o caminho para reaver o que é seu.</p>
     <div class="cta-row rv">
       <a href="https://wa.me/5546988226533" class="btn btn--gold" target="_blank" rel="noopener">Falar no WhatsApp <span class="ar">→</span></a>
+      <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--ghost" target="_blank" rel="noopener">Negocie sua dívida</a>
       <a href="mailto:contato@cobrasq.com.br" class="btn btn--ghost">contato@cobrasq.com.br</a>
     </div>
   </div>
@@ -418,6 +533,11 @@
   </div>
 </footer>
 
+<!-- WhatsApp flutuante -->
+<a class="wa-fab" id="waFab" href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20COBRASQ." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.3-.4C5.5 18.4 5 16.7 5 15 5 9 9.9 4.1 16 4.1 22.1 4.1 27 9 27 15s-4.9 9.8-11 9.8zm5.6-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
 <script>
   // ano
   document.getElementById('yr').textContent = new Date().getFullYear();
@@ -447,6 +567,18 @@
     hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;hero.style.setProperty('--gx',(x*22).toFixed(1));hero.style.setProperty('--gy',(y*22).toFixed(1));},{passive:true});
     hero.addEventListener('mouseleave',()=>{hero.style.setProperty('--gx','0');hero.style.setProperty('--gy','0');});
   }
+
+  // menu mobile (abre/fecha)
+  const burger=document.getElementById('burger'), panel=document.getElementById('mobile-panel');
+  if(burger&&panel){
+    const setOpen=(o)=>{panel.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');};
+    burger.addEventListener('click',()=>setOpen(!panel.classList.contains('open')));
+    panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+  }
+
+  // WhatsApp flutuante (aparece ao rolar)
+  const fab=document.getElementById('waFab');
+  if(fab){const onF=()=>fab.classList.toggle('show',window.scrollY>600);onF();addEventListener('scroll',onF,{passive:true});}
 </script>
 </body>
 </html>
