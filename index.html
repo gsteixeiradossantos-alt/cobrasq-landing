@@ -160,8 +160,8 @@
   .defs dd{font-size:14.5px;color:var(--ink-mute)}
 
   /* ---------- Como funciona ---------- */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--d-line);border:1px solid var(--d-line);border-radius:3px;overflow:hidden}
-  .step{background:var(--ink);padding:34px 28px 40px;min-height:230px;display:flex;flex-direction:column}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--d-line);border:1px solid var(--d-line);border-radius:3px;overflow:hidden}
+  .step{background:var(--ink);padding:28px 22px 32px;min-height:204px;display:flex;flex-direction:column}
   .step .sn{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--accent)}
   .step h3{margin:18px 0 12px;color:#fff}
   .step p{font-size:14.5px;color:var(--d-mute);line-height:1.6}
@@ -179,7 +179,7 @@
   .band-ov p em{font-family:var(--serif-edit)}
 
   /* ---------- Diferenciais ---------- */
-  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,28px)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px)}
   .card{border:1px solid var(--ink-line);border-radius:3px;padding:34px 32px;transition:.25s ease;background:var(--paper)}
   .card:hover{border-color:var(--accent);transform:translateY(-3px)}
   .card .ci{width:34px;height:34px;border-radius:50%;border:1px solid var(--accent);display:grid;place-items:center;margin-bottom:22px}
@@ -188,8 +188,11 @@
   .card p{font-size:14.5px;color:var(--ink-mute)}
 
   /* ---------- Sobre ---------- */
-  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:center}
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,6vw,72px);align-items:center}
   .about-grid .media{aspect-ratio:4/3;box-shadow:0 40px 80px -50px rgba(0,0,0,.6)}
+  .about-cap{margin-top:18px}
+  .about-cap b{display:block;font-family:var(--serif);font-size:21px;font-weight:400;color:#fff}
+  .about-cap span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-top:5px}
   .about-grid h2{margin-bottom:24px}
   .about-grid p{color:var(--d-text);margin-bottom:16px;max-width:42em}
   .sign{margin-top:26px}
@@ -216,14 +219,13 @@
 
   /* ---------- Indicadores (KPIs animados) ---------- */
   .kpis{background:var(--ink);color:#fff;border-top:1px solid var(--d-line);border-bottom:1px solid var(--d-line);padding-block:clamp(42px,6vw,76px)}
-  .kpis .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(22px,3vw,40px)}
+  .kpis .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,56px)}
   .kpi{text-align:center;position:relative}
-  .kpi + .kpi::before{content:"";position:absolute;left:calc(-1*clamp(11px,1.5vw,20px));top:50%;transform:translateY(-50%);width:1px;height:52px;background:var(--d-line)}
-  .kpi .num{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.2vw,58px);line-height:1;letter-spacing:-.02em}
+  .kpi + .kpi::before{content:"";position:absolute;left:calc(-1*clamp(10px,2vw,28px));top:50%;transform:translateY(-50%);width:1px;height:54px;background:var(--d-line)}
+  .kpi .num{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.02em}
   .kpi .num .u{color:var(--accent);font-size:.5em;font-style:italic;font-family:var(--serif-edit)}
-  .kpi .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--d-mute);margin-top:14px}
-  @media(max-width:900px){.kpis .wrap{grid-template-columns:repeat(2,1fr);gap:40px 24px}.kpi:nth-child(odd)::before{display:none}}
-  @media(max-width:520px){.kpis .wrap{grid-template-columns:1fr}.kpi+.kpi::before{display:none}}
+  .kpi .lab{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--d-mute);margin-top:15px}
+  @media(max-width:680px){.kpis .wrap{grid-template-columns:1fr;gap:36px}.kpi+.kpi::before{display:none}}
 
   /* ---------- Nav: acesso ao sistema + painel mobile ---------- */
   .nav-actions{display:flex;align-items:center;gap:14px}
@@ -253,7 +255,7 @@
 
   /* ---------- Localização (mapa) ---------- */
   .loc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center}
-  .map-frame{position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 30px 60px -40px rgba(0,0,0,.45)}
+  .map-frame{position:relative;aspect-ratio:16/10;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 24px 50px -42px rgba(0,0,0,.45)}
   .map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .loc-info h2{margin-bottom:16px}
   .loc-info .addr{color:var(--ink-mute);font-size:16px;line-height:1.75;font-style:normal}
@@ -285,8 +287,9 @@
   .hero-name .rl{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-top:6px;text-shadow:0 2px 12px rgba(0,0,0,.75)}
 
   /* ---------- Foto da fachada (Localização) ---------- */
-  .loc-photo{width:100%;aspect-ratio:21/9;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 30px 60px -45px rgba(0,0,0,.4);margin-bottom:clamp(26px,4vw,48px)}
-  .loc-photo img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+  .loc-visuals{display:flex;flex-direction:column;gap:16px}
+  .loc-photo{aspect-ratio:5/4;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 24px 50px -42px rgba(0,0,0,.4)}
+  .loc-photo img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
 
   /* ---------- Reveal ---------- */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -364,7 +367,7 @@
       </figure>
       <div class="stat-badge">
         <div class="num"><em><span class="count" data-to="100" data-dec="0">0</span>%</em></div>
-        <div class="lab">do principal volta ao seu caixa</div>
+        <div class="lab">do principal ao credor, em caso de êxito</div>
       </div>
       <div class="hero-name"><span class="nm">Gustavo Teixeira</span><span class="rl">Fundador &amp; CEO</span></div>
     </aside>
@@ -380,11 +383,7 @@
     </div>
     <div class="kpi rv">
       <div class="num"><span class="count" data-to="100" data-dec="0">0</span><span class="u">%</span></div>
-      <div class="lab">Do principal de volta ao caixa</div>
-    </div>
-    <div class="kpi rv">
-      <div class="num">Extrajudicial</div>
-      <div class="lab">Negociação e acordo, sem litígio</div>
+      <div class="lab">Do principal ao credor, em caso de êxito</div>
     </div>
     <div class="kpi rv">
       <div class="num">Desde 2019</div>
@@ -400,7 +399,7 @@
     <div class="model-grid">
       <div class="rv">
         <div class="bignum"><em><span class="count" data-to="100" data-dec="0">0</span><span style="font-size:.5em">%</span></em></div>
-        <div class="bignum-sub">do valor principal retorna ao credor</div>
+        <div class="bignum-sub">do valor principal retorna ao credor, em caso de êxito</div>
       </div>
       <div class="rv">
         <h2>O capital é seu. <em>O trabalho é nosso.</em></h2>
@@ -434,7 +433,8 @@
       <div class="step rv"><div class="sn">01</div><h3>Diagnóstico</h3><p>Analisamos a carteira antes de qualquer promessa. Mapeamos o devedor e a capacidade real de pagamento.</p><div class="sym"></div></div>
       <div class="step rv"><div class="sn">02</div><h3>Localização e contato</h3><p>Encontramos o devedor e reabrimos o canal: telefone, e-mail, mensagem, com abordagem correta e respeitosa.</p><div class="sym"></div></div>
       <div class="step rv"><div class="sn">03</div><h3>Negociação e acordo</h3><p>Construímos condições que cabem no bolso do devedor e devolvem o capital ao credor.</p><div class="sym"></div></div>
-      <div class="step rv"><div class="sn">04</div><h3>Quitação e nome limpo</h3><p>Cumprido o acordo, o credor recebe e o devedor sai da inadimplência, com a prestação de contas de cada etapa.</p><div class="sym"></div></div>
+      <div class="step rv"><div class="sn">04</div><h3>Persistência</h3><p>Se o devedor recusa o acordo, não paramos: adotamos as medidas cabíveis para reaver o crédito, sempre dentro da lei.</p><div class="sym"></div></div>
+      <div class="step rv"><div class="sn">05</div><h3>Quitação e nome limpo</h3><p>Cumprido o acordo, o credor recebe e o devedor sai da inadimplência, com a prestação de contas de cada etapa.</p><div class="sym"></div></div>
     </div>
   </div>
 </section>
@@ -445,7 +445,6 @@
     <div class="meta rv"><span class="n">03</span> <span>Por que a COBRASQ</span> <span class="ln"></span></div>
     <div class="cards">
       <div class="card rv"><div class="ci"></div><h3>Diagnóstico antes da promessa</h3><p>Não prometemos resultado sem analisar. Mostramos a leitura da carteira primeiro. Promessa sem diagnóstico é garantia que ninguém cumpre.</p></div>
-      <div class="card rv"><div class="ci"></div><h3>100% extrajudicial</h3><p>Recuperação por negociação e acordo, sem litígio. Mais rápida, menos desgaste, e preserva a relação com o cliente inadimplente.</p></div>
       <div class="card rv"><div class="ci"></div><h3>Transparência integral</h3><p>O principal é repassado por inteiro e cada movimento é prestado em conta. Sem letra miúda sobre o que é seu.</p></div>
       <div class="card rv"><div class="ci"></div><h3>Recuperação que restaura</h3><p>Para o credor, o capital de volta. Para o devedor, o nome limpo e o crédito de novo. Recuperar é reconstruir os dois lados.</p></div>
     </div>
@@ -457,9 +456,12 @@
   <div class="wrap">
     <div class="meta rv"><span class="n">04</span> <span>Sobre</span> <span class="ln"></span></div>
     <div class="about-grid">
-      <figure class="media rv" data-label="Retrato · CEO">
-        <img src="assets/sobre.jpg" alt="Gustavo Teixeira — COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
-      </figure>
+      <div class="about-photo rv">
+        <figure class="media" data-label="Sócios · COBRASQ">
+          <img src="assets/sobre.jpg" alt="Ana Clara Azzolin e Gustavo Teixeira, sócios da COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
+        </figure>
+        <div class="about-cap"><b>Ana Clara e Gustavo Teixeira</b><span>Sócios · COBRASQ</span></div>
+      </div>
       <div class="rv">
         <h2>A recuperadora que <em>diagnostica</em> antes de prometer.</h2>
         <p>Desde 2019, a COBRASQ trata a inadimplência como ela é: um ativo parado, não uma perda definitiva. Fazemos a recuperação extrajudicial de crédito em todo o país, pela análise, pelo diálogo e pelo acordo.</p>
@@ -524,10 +526,12 @@
 <section id="localizacao" class="soft">
   <div class="wrap">
     <div class="meta rv"><span class="n">07</span> <span>Localização</span> <span class="ln"></span></div>
-    <figure class="loc-photo rv"><img src="assets/fachada.jpg" alt="Fachada da COBRASQ no Edifício Mara, Dois Vizinhos/PR" loading="lazy"></figure>
     <div class="loc-grid">
-      <div class="map-frame rv">
-        <iframe title="Mapa · COBRASQ, Dois Vizinhos/PR" src="https://www.google.com/maps?q=-25.7502273,-53.0560522&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="loc-visuals rv">
+        <figure class="loc-photo"><img src="assets/fachada.jpg" alt="Fachada da COBRASQ no Edifício Mara, Dois Vizinhos/PR" loading="lazy"></figure>
+        <div class="map-frame">
+          <iframe title="Mapa · COBRASQ, Dois Vizinhos/PR" src="https://www.google.com/maps?q=-25.7502273,-53.0560522&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
       </div>
       <div class="loc-info rv">
         <h2>Onde a COBRASQ <em>fica.</em></h2>
@@ -575,7 +579,7 @@
       </div>
     </div>
     <div class="foot-bot">
-      <span>© <span id="yr"></span> COBRASQ · Recuperadora de Crédito</span>
+      <span>© 2019 COBRASQ · Recuperadora de Crédito e Cobrança®</span>
       <span>Recuperar é restituir</span>
     </div>
   </div>
@@ -587,8 +591,6 @@
 </a>
 
 <script>
-  // ano
-  document.getElementById('yr').textContent = new Date().getFullYear();
   // nav scrolled
   const h=document.getElementById('top');
   const onScroll=()=>h.classList.toggle('scrolled',window.scrollY>40);
