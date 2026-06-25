@@ -254,8 +254,8 @@
   .faq details p em{color:var(--accent)}
 
   /* ---------- Localização (mapa) ---------- */
-  .loc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center}
-  .map-frame{position:relative;aspect-ratio:16/10;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 24px 50px -42px rgba(0,0,0,.45)}
+  .loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,64px);align-items:center}
+  .map-frame{position:relative;aspect-ratio:16/10;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 24px 50px -42px rgba(0,0,0,.45);margin:22px 0 26px}
   .map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .loc-info h2{margin-bottom:16px}
   .loc-info .addr{color:var(--ink-mute);font-size:16px;line-height:1.75;font-style:normal}
@@ -287,9 +287,8 @@
   .hero-name .rl{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-top:6px;text-shadow:0 2px 12px rgba(0,0,0,.75)}
 
   /* ---------- Foto da fachada (Localização) ---------- */
-  .loc-visuals{display:flex;flex-direction:column;gap:16px}
-  .loc-photo{aspect-ratio:5/4;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 24px 50px -42px rgba(0,0,0,.4)}
-  .loc-photo img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+  .loc-photo{aspect-ratio:4/5;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 30px 60px -48px rgba(0,0,0,.45)}
+  .loc-photo img{width:100%;height:100%;object-fit:cover;object-position:center center}
 
   /* ---------- Reveal ---------- */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -527,16 +526,14 @@
   <div class="wrap">
     <div class="meta rv"><span class="n">07</span> <span>Localização</span> <span class="ln"></span></div>
     <div class="loc-grid">
-      <div class="loc-visuals rv">
-        <figure class="loc-photo"><img src="assets/fachada.jpg" alt="Fachada da COBRASQ no Edifício Mara, Dois Vizinhos/PR" loading="lazy"></figure>
-        <div class="map-frame">
-          <iframe title="Mapa · COBRASQ, Dois Vizinhos/PR" src="https://www.google.com/maps?q=-25.7502273,-53.0560522&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        </div>
-      </div>
+      <figure class="loc-photo rv"><img src="assets/fachada-predio.jpg" alt="Prédio da COBRASQ, Edifício Mara, Dois Vizinhos/PR" loading="lazy"></figure>
       <div class="loc-info rv">
         <h2>Onde a COBRASQ <em>fica.</em></h2>
         <p class="addr"><b>COBRASQ Recuperadora de Crédito</b><br>Av. Rio Grande do Sul, 380, Sala 201<br>Edifício Mara, Centro<br>Dois Vizinhos / PR · CEP 85660-000</p>
         <div class="hours">Atuação nacional · atendimento de segunda a sexta</div>
+        <div class="map-frame">
+          <iframe title="Mapa · COBRASQ, Dois Vizinhos/PR" src="https://www.google.com/maps?q=-25.7502273,-53.0560522&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
         <a href="https://www.google.com/maps/dir/?api=1&destination=-25.7502273,-53.0560522" class="btn btn--line" target="_blank" rel="noopener">Como chegar <span class="ar">→</span></a>
       </div>
     </div>
