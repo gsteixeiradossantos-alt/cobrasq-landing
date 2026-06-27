@@ -4,18 +4,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>COBRASQ · Recuperação de Crédito</title>
-<meta name="description" content="COBRASQ ·Recuperadora de crédito. Cobrança extrajudicial que transforma inadimplência em caixa para o credor e devolve o nome limpo ao devedor. Atuação nacional." />
+<meta name="description" content="COBRASQ · Recuperadora de crédito. Cobrança extrajudicial que transforma inadimplência em caixa para o credor e devolve o nome limpo ao devedor. Atuação nacional." />
 <link rel="canonical" href="https://cobrasq.com.br/" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cobrasq.com.br/" />
-<meta property="og:title" content="COBRASQ ·Recuperar é restituir" />
+<meta property="og:title" content="COBRASQ · Recuperar é restituir" />
 <meta property="og:description" content="Recuperação de crédito por cobrança extrajudicial: o principal volta inteiro ao credor e o devedor recupera o nome limpo." />
 <meta property="og:image" content="https://cobrasq.com.br/assets/og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="pt_BR" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="COBRASQ ·Recuperar é restituir" />
+<meta name="twitter:title" content="COBRASQ · Recuperar é restituir" />
 <meta name="twitter:description" content="Recuperação de crédito extrajudicial. O principal volta inteiro ao credor; o devedor recupera o nome." />
 <meta name="twitter:image" content="https://cobrasq.com.br/assets/og.jpg" />
 <link rel="preload" as="image" href="assets/hero-poltrona.jpg" />
@@ -240,18 +240,18 @@
     .mobile-panel .btn{margin-top:16px;justify-content:center}
   }
 
-  /* ---------- FAQ (fundo escuro) ---------- */
+  /* ---------- FAQ (fundo claro) ---------- */
   .faq{max-width:880px;margin:0 auto}
-  .faq details{border-bottom:1px solid var(--d-line)}
-  .faq summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:var(--serif);font-size:clamp(18px,2.2vw,23px);font-weight:400;color:#fff}
+  .faq details{border-bottom:1px solid var(--ink-line)}
+  .faq summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:var(--serif);font-size:clamp(18px,2.2vw,23px);font-weight:400;color:var(--ink)}
   .faq summary::-webkit-details-marker{display:none}
   .faq summary .pl{position:relative;width:18px;height:18px;flex:none}
   .faq summary .pl::before,.faq summary .pl::after{content:"";position:absolute;background:var(--accent);transition:.25s ease}
   .faq summary .pl::before{top:8px;left:0;width:18px;height:1.5px}
   .faq summary .pl::after{top:0;left:8px;width:1.5px;height:18px}
   .faq details[open] summary .pl::after{transform:rotate(90deg);opacity:0}
-  .faq details p{padding:0 42px 26px 0;color:var(--d-text);font-size:15px;line-height:1.7;max-width:72ch}
-  .faq details p em{color:var(--accent)}
+  .faq details p{padding:0 42px 26px 0;color:var(--ink-mute);font-size:15px;line-height:1.7;max-width:72ch}
+  .faq details p em{color:var(--accent-2)}
 
   /* ---------- Localização (mapa) ---------- */
   .loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,64px);align-items:center}
@@ -289,6 +289,72 @@
   /* ---------- Foto da fachada (Localização) ---------- */
   .loc-photo{aspect-ratio:4/5;border-radius:3px;overflow:hidden;border:1px solid var(--ink-line);box-shadow:0 30px 60px -48px rgba(0,0,0,.45)}
   .loc-photo img{width:100%;height:100%;object-fit:cover;object-position:center center}
+
+  /* ---------- Nav: link devedor + hero devedor ---------- */
+  .nav-dev{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--d-mute);transition:.2s;white-space:nowrap}
+  .nav-dev:hover{color:var(--accent)}
+  .hero-dev{display:inline-block;font-size:13px;color:var(--d-mute);border-bottom:1px solid var(--d-div);padding-bottom:2px;transition:.2s}
+  .hero-dev:hover{color:var(--accent);border-color:var(--accent)}
+  .hero-cta{align-items:center}
+
+  /* ---------- Risco zero ---------- */
+  .risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,72px);align-items:center}
+  .risk-grid h2{margin-bottom:18px}
+  .risk-grid .mute{max-width:480px}
+  .risk-list{display:flex;flex-direction:column;gap:14px}
+  .risk-item{display:flex;align-items:center;gap:18px;border:1px solid var(--ink-line);background:var(--paper);padding:22px 26px;border-radius:3px}
+  .risk-item .rn{font-family:var(--serif);font-size:28px;color:var(--accent-2);line-height:1;flex:none}
+  .risk-item p{font-family:var(--serif);font-size:clamp(18px,2vw,22px);line-height:1.15;color:var(--ink)}
+  .risk-item.hi{background:var(--ink);border-color:var(--accent)}
+  .risk-item.hi .rn{color:var(--accent)}
+  .risk-item.hi p{color:#fff}
+  @media(max-width:760px){.risk-grid{grid-template-columns:1fr}}
+
+  /* ---------- Resultados: stats + caso ---------- */
+  .res-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,32px);border-top:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line);padding:40px 0}
+  .res-stats .num{font-family:var(--serif);font-weight:300;font-size:clamp(38px,4vw,58px);line-height:1;letter-spacing:-.02em}
+  .res-stats .num .u{font-size:.5em;color:var(--accent-2)}
+  .res-stats .lab{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-top:10px;line-height:1.5}
+  @media(max-width:760px){.res-stats{grid-template-columns:1fr 1fr;gap:30px 20px}}
+  .case{display:grid;grid-template-columns:1fr 1fr;margin-top:48px;border:1px solid var(--accent);border-radius:3px;overflow:hidden}
+  .case-desc{background:var(--ink);color:#fff;padding:clamp(32px,4vw,48px)}
+  .case-desc .tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .case-desc h3{font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.1;margin-top:18px;color:#fff}
+  .case-desc p{font-size:15px;line-height:1.6;color:var(--d-text);margin-top:18px}
+  .case-nums{background:var(--paper-soft);padding:clamp(32px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:24px}
+  .case-nums .num{font-family:var(--serif);font-weight:300;font-size:clamp(38px,4vw,52px);line-height:1;letter-spacing:-.02em}
+  .case-nums .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-top:8px}
+  .case-nums .div{height:1px;background:var(--ink-line)}
+  @media(max-width:760px){.case{grid-template-columns:1fr}}
+
+  /* ---------- Diagnóstico (formulário) ---------- */
+  .diag-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(40px,6vw,72px);align-items:start}
+  .diag-points{margin-top:36px;display:flex;flex-direction:column;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--d-mute)}
+  .form-card{background:rgba(255,255,255,.04);border:1px solid var(--d-div);padding:clamp(26px,4vw,40px);border-radius:3px}
+  .form-card form{display:flex;flex-direction:column;gap:20px}
+  .fg label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .fg input,.fg select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--d-div);color:#fff;font-family:var(--sans);font-size:16px;padding:9px 0;outline:none}
+  .fg input::placeholder{color:rgba(255,255,255,.38)}
+  .fg select{cursor:pointer}
+  .fg select option{color:var(--ink)}
+  .fg input:focus,.fg select:focus{border-color:var(--accent)}
+  .fg-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .form-card .divln{height:1px;background:var(--d-line);margin:2px 0}
+  .form-card button{margin-top:8px;width:100%;justify-content:center;background:var(--accent);color:var(--ink);border:0;font-weight:500}
+  .form-card button:hover{background:#d8bd7e}
+  .form-ok{display:none;flex-direction:column;gap:16px;text-align:center;padding:14px 0}
+  .form-card.done form{display:none}
+  .form-card.done .form-ok{display:flex}
+  .form-ok .chk{font-family:var(--serif);font-size:42px;color:var(--accent);line-height:1}
+  .form-ok h3{font-weight:300;font-size:28px;color:#fff}
+  .form-ok p{font-size:14.5px;color:var(--d-text);max-width:380px;margin:0 auto}
+  .form-ok .okbtns{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+  @media(max-width:820px){.diag-grid{grid-template-columns:1fr}.fg-2{grid-template-columns:1fr}}
+
+  /* ---------- Devedor (porta discreta) ---------- */
+  .dev-strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-block:clamp(28px,4vw,40px)}
+  .dev-strip p{font-size:15px;color:var(--ink-mute);max-width:620px}
+  .dev-strip p b{color:var(--ink)}
 
   /* ---------- Reveal ---------- */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -328,22 +394,23 @@
     <div class="nav-links">
       <a href="#modelo">O modelo</a>
       <a href="#processo">Como funciona</a>
-      <a href="#diferenciais">Por que a COBRASQ</a>
+      <a href="#resultados">Resultados</a>
       <a href="#sobre">Sobre</a>
     </div>
     <div class="nav-actions">
+      <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="nav-dev" target="_blank" rel="noopener">Sou devedor</a>
       <a href="https://cobrasq-faturamento.vercel.app/" class="nav-sys" target="_blank" rel="noopener">Acesso ao sistema ↗</a>
-      <a href="#contato" class="btn btn--gold nav-cta">Agendar conversa <span class="ar">→</span></a>
+      <a href="#diagnostico" class="btn btn--gold nav-cta">Diagnóstico da carteira <span class="ar">→</span></a>
     </div>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-panel"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-panel" id="mobile-panel">
     <a class="mlink" href="#modelo">O modelo</a>
     <a class="mlink" href="#processo">Como funciona</a>
-    <a class="mlink" href="#diferenciais">Por que a COBRASQ</a>
+    <a class="mlink" href="#resultados">Resultados</a>
     <a class="mlink" href="#sobre">Sobre</a>
     <a class="mlink" href="https://cobrasq-faturamento.vercel.app/" target="_blank" rel="noopener">Acesso ao sistema ↗</a>
-    <a href="#contato" class="btn btn--gold">Agendar conversa <span class="ar">→</span></a>
+    <a href="#diagnostico" class="btn btn--gold">Diagnóstico da carteira <span class="ar">→</span></a>
     <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--ghost" target="_blank" rel="noopener">Negocie sua dívida</a>
   </div>
 </header>
@@ -352,12 +419,12 @@
 <section class="hero">
   <div class="wrap">
     <div class="hero-main">
-      <span class="eyebrow">Recuperação de crédito · Cobrança extrajudicial</span>
-      <h1>Recuperar é <em>restituir</em>.</h1>
-      <p class="lede">Transformamos inadimplência em caixa. O principal volta inteiro ao credor. À COBRASQ cabem apenas os <em>acessórios</em>: juros, correção e multa.</p>
+      <span class="eyebrow">Recuperação de crédito · Para empresas · Atuação nacional</span>
+      <h1>Sua carteira parada é <em>caixa adormecido</em>.</h1>
+      <p class="lede">Recuperamos o que devem à sua empresa por acordo extrajudicial. O <em>principal volta inteiro</em> ao seu caixa; à COBRASQ cabem só os acessórios: juros, correção e multa.</p>
       <div class="hero-cta">
-        <a href="#contato" class="btn btn--gold">Agendar conversa <span class="ar">→</span></a>
-        <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--ghost" target="_blank" rel="noopener">Negocie sua dívida</a>
+        <a href="#diagnostico" class="btn btn--gold">Diagnóstico gratuito da carteira <span class="ar">→</span></a>
+        <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="hero-dev" target="_blank" rel="noopener">É você que deve? Negocie sua dívida →</a>
       </div>
     </div>
     <aside class="hero-aside">
@@ -373,20 +440,30 @@
   </div>
 </section>
 
-<!-- ===================== INDICADORES ===================== -->
-<section class="kpis">
+<!-- ===================== STRIP · ALCANCE ===================== -->
+<div class="strip">
   <div class="wrap">
-    <div class="kpi rv">
-      <div class="num"><span class="u">R$ </span><span class="count" data-to="2.5" data-dec="1">0,0</span> <span class="u">mi</span></div>
-      <div class="lab">Recuperado e devolvido a credores</div>
-    </div>
-    <div class="kpi rv">
-      <div class="num"><span class="count" data-to="100" data-dec="0">0</span><span class="u">%</span></div>
-      <div class="lab">Do principal ao credor, em caso de êxito</div>
-    </div>
-    <div class="kpi rv">
-      <div class="num">Desde 2019</div>
-      <div class="lab">No mercado de crédito</div>
+    <span>Clientes em SC · MG · MT · PR</span>
+    <span>Atuação nacional</span>
+    <span>Sede em Dois Vizinhos / PR</span>
+    <span>Desde 2019</span>
+  </div>
+</div>
+
+<!-- ===================== RISCO ZERO ===================== -->
+<section class="soft">
+  <div class="wrap">
+    <div class="risk-grid">
+      <div class="rv">
+        <span class="eyebrow" style="color:var(--accent-2)">Para o credor</span>
+        <h2 style="margin-top:16px">O risco é <em>seu</em>? Não. É <em>nosso</em>.</h2>
+        <p class="mute">Você não paga nada para começar: sem mensalidade, sem taxa de adesão. Se não recuperarmos, você não paga. Nossa remuneração vem só dos acessórios que a inadimplência acumulou, e nunca sai do que já é seu.</p>
+      </div>
+      <div class="risk-list rv">
+        <div class="risk-item"><span class="rn">01</span><p>Sem custo inicial para contratar.</p></div>
+        <div class="risk-item"><span class="rn">02</span><p>Não recuperou? Você não paga nada.</p></div>
+        <div class="risk-item hi"><span class="rn">03</span><p>100% do principal volta ao seu caixa.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -432,53 +509,37 @@
       <div class="step rv"><div class="sn">01</div><h3>Diagnóstico</h3><p>Analisamos a carteira antes de qualquer promessa. Mapeamos o devedor e a capacidade real de pagamento.</p><div class="sym"></div></div>
       <div class="step rv"><div class="sn">02</div><h3>Localização e contato</h3><p>Encontramos o devedor e reabrimos o canal: telefone, e-mail, mensagem, com abordagem correta e respeitosa.</p><div class="sym"></div></div>
       <div class="step rv"><div class="sn">03</div><h3>Negociação e acordo</h3><p>Construímos condições que cabem no bolso do devedor e devolvem o capital ao credor.</p><div class="sym"></div></div>
-      <div class="step rv"><div class="sn">04</div><h3>Persistência</h3><p>Se o devedor recusa o acordo, não paramos: adotamos as medidas cabíveis para reaver o crédito, sempre dentro da lei.</p><div class="sym"></div></div>
+      <div class="step rv"><div class="sn">04</div><h3>Persistência</h3><p>Se o devedor recusa o acordo, não paramos: seguimos pelas medidas extrajudiciais cabíveis para reaver o crédito, sempre dentro da lei.</p><div class="sym"></div></div>
       <div class="step rv"><div class="sn">05</div><h3>Quitação e nome limpo</h3><p>Cumprido o acordo, o credor recebe e o devedor sai da inadimplência, com a prestação de contas de cada etapa.</p><div class="sym"></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== DIFERENCIAIS ===================== -->
-<section id="diferenciais" class="soft">
+<!-- ===================== RESULTADOS ===================== -->
+<section id="resultados">
   <div class="wrap">
-    <div class="meta rv"><span class="n">03</span> <span>Por que a COBRASQ</span> <span class="ln"></span></div>
-    <div class="cards">
-      <div class="card rv"><div class="ci"></div><h3>Diagnóstico antes da promessa</h3><p>Não prometemos resultado sem analisar. Mostramos a leitura da carteira primeiro. Promessa sem diagnóstico é garantia que ninguém cumpre.</p></div>
-      <div class="card rv"><div class="ci"></div><h3>Transparência integral</h3><p>O principal é repassado por inteiro e cada movimento é prestado em conta. Sem letra miúda sobre o que é seu.</p></div>
-      <div class="card rv"><div class="ci"></div><h3>Recuperação que restaura</h3><p>Para o credor, o capital de volta. Para o devedor, o nome limpo e o crédito de novo. Recuperar é reconstruir os dois lados.</p></div>
+    <div class="meta rv"><span class="n">03</span> <span>Resultados</span> <span class="ln"></span> <span>O que já voltou ao caixa dos credores</span></div>
+    <div class="res-stats rv">
+      <div><div class="num"><span class="u">R$ </span><span class="count" data-to="2.5" data-dec="1">0,0</span> <span class="u">mi</span></div><div class="lab">recuperados e devolvidos a credores</div></div>
+      <div><div class="num"><span class="count" data-to="700" data-dec="0">0</span><span class="u">+</span></div><div class="lab">acordos fechados</div></div>
+      <div><div class="num"><span class="count" data-to="60" data-dec="0">0</span><span class="u">+</span></div><div class="lab">empresas atendidas</div></div>
+      <div><div class="num"><span class="count" data-to="100" data-dec="0">0</span><span class="u">%</span></div><div class="lab">do principal devolvido, em caso de êxito</div></div>
     </div>
-  </div>
-</section>
 
-<!-- ===================== SOBRE ===================== -->
-<section id="sobre" class="dark">
-  <div class="wrap">
-    <div class="meta rv"><span class="n">04</span> <span>Sobre</span> <span class="ln"></span></div>
-    <div class="about-grid">
-      <div class="about-photo rv">
-        <figure class="media" data-label="Sócios · COBRASQ">
-          <img src="assets/sobre.jpg" alt="Ana Clara Azzolin e Gustavo Teixeira, sócios da COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
-        </figure>
-        <div class="about-cap"><b>Ana Clara e Gustavo Teixeira</b><span>Sócios · COBRASQ</span></div>
+    <div class="case rv">
+      <div class="case-desc">
+        <div class="tag">Caso real · anonimizado</div>
+        <h3>Distribuidora de ferro com carteira parada desde 2023.</h3>
+        <p>Crédito considerado perda definitiva pela empresa. Diagnóstico, contato e acordo extrajudicial em sequência: sem ação judicial e sem custo inicial para o credor.</p>
       </div>
-      <div class="rv">
-        <h2>A recuperadora que <em>diagnostica</em> antes de prometer.</h2>
-        <p>Desde 2019, a COBRASQ trata a inadimplência como ela é: um ativo parado, não uma perda definitiva. Fazemos a recuperação extrajudicial de crédito em todo o país, pela análise, pelo diálogo e pelo acordo.</p>
-        <p>Nosso compromisso é simples e verificável: o capital volta inteiro ao credor, e o devedor sai da inadimplência com o nome limpo. Recuperar, para nós, é restituir os dois lados.</p>
-        <div class="sign">
-          <div class="nm">Gustavo Teixeira</div>
-          <div class="rl">Proprietário · COBRASQ Recuperadora de Crédito</div>
-        </div>
+      <div class="case-nums">
+        <div><div class="num">R$ 150 mil</div><div class="lab">recuperados e devolvidos ao caixa</div></div>
+        <div class="div"></div>
+        <div><div class="num">9 meses</div><div class="lab">do diagnóstico à quitação</div></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ===================== DEPOIMENTOS ===================== -->
-<section id="depoimentos" class="soft">
-  <div class="wrap">
-    <div class="meta rv"><span class="n">05</span> <span>Depoimentos</span> <span class="ln"></span></div>
-    <div class="reviews-head rv">
+    <div class="reviews-head rv" style="margin-top:56px">
       <div class="big">5,0</div>
       <div>
         <div class="stars">★★★★★</div>
@@ -506,11 +567,49 @@
   </div>
 </section>
 
+<!-- ===================== DIFERENCIAIS ===================== -->
+<section id="diferenciais" class="soft">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">04</span> <span>Por que a COBRASQ</span> <span class="ln"></span></div>
+    <div class="cards">
+      <div class="card rv"><div class="ci"></div><h3>Diagnóstico antes da promessa</h3><p>Não prometemos resultado sem analisar. Mostramos a leitura da carteira primeiro. Promessa sem diagnóstico é garantia que ninguém cumpre.</p></div>
+      <div class="card rv"><div class="ci"></div><h3>Transparência integral</h3><p>O principal é repassado por inteiro e cada movimento é prestado em conta. Sem letra miúda sobre o que é seu.</p></div>
+      <div class="card rv"><div class="ci"></div><h3>Cobrança correta e dentro da lei</h3><p>Sem constrangimento, sem cobrança indevida ou prescrita. A relação com o seu cliente é preservada, o que protege também o seu nome.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section id="sobre" class="dark">
+  <div class="wrap">
+    <div class="meta rv"><span class="n">05</span> <span>Sobre</span> <span class="ln"></span></div>
+    <div class="about-grid">
+      <div class="about-photo rv">
+        <figure class="media" data-label="Sócios · COBRASQ">
+          <img src="assets/sobre.jpg" alt="Ana Clara Azzolin e Gustavo Teixeira, sócios da COBRASQ" onerror="this.remove();this.parentElement.classList.add('is-empty')">
+        </figure>
+        <div class="about-cap"><b>Ana Clara e Gustavo Teixeira</b><span>Sócios · COBRASQ</span></div>
+      </div>
+      <div class="rv">
+        <h2>A recuperadora que <em>diagnostica</em> antes de prometer.</h2>
+        <p>Desde 2019, a COBRASQ trata a inadimplência como ela é: um ativo parado, não uma perda definitiva. Fazemos a recuperação extrajudicial de crédito em todo o país, pela análise, pelo diálogo e pelo acordo.</p>
+        <p>Nosso compromisso é simples e verificável: o capital volta inteiro ao credor, e o devedor sai da inadimplência com o nome limpo. Recuperar, para nós, é restituir os dois lados.</p>
+        <div class="sign">
+          <div class="nm">Gustavo Teixeira</div>
+          <div class="rl">Proprietário · COBRASQ Recuperadora de Crédito</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== FAQ ===================== -->
-<section id="faq" class="dark">
+<section id="faq" class="soft">
   <div class="wrap">
     <div class="meta rv"><span class="n">06</span> <span>Perguntas frequentes</span> <span class="ln"></span></div>
     <div class="faq rv">
+      <details><summary>Quanto custa? E se não recuperarem nada?<span class="pl"></span></summary><p>Sem custo inicial e sem mensalidade. Nossa remuneração vem só dos acessórios (juros, correção e multa), <em>em caso de êxito</em>: se não recuperamos, você não paga nada.</p></details>
+      <details><summary>Vocês têm porte para a minha carteira?<span class="pl"></span></summary><p>Desde 2019 já devolvemos mais de R$ 2,5 milhões a credores, em mais de 700 acordos e 60 empresas, com clientes em SC, MG, MT e PR e atuação nacional.</p></details>
       <details><summary>Como funciona a remuneração?<span class="pl"></span></summary><p>O valor principal volta integralmente ao credor. A COBRASQ é remunerada apenas pelos acessórios (juros, correção e multa) que a inadimplência acumulou. Você não divide o que é seu.</p></details>
       <details><summary>Vocês prestam contas do que é recuperado?<span class="pl"></span></summary><p>Sim. Cada etapa é registrada e o repasse do principal é prestado em conta: você acompanha o que foi feito e o que entrou no caixa.</p></details>
       <details><summary>Atendem em todo o Brasil?<span class="pl"></span></summary><p>Sim. A atuação é nacional, com sede em Dois Vizinhos/PR. Todo o contato pode ser feito a distância.</p></details>
@@ -540,17 +639,58 @@
   </div>
 </section>
 
-<!-- ===================== CTA ===================== -->
-<section id="contato" class="dark cta">
+<!-- ===================== DIAGNÓSTICO (formulário) ===================== -->
+<section id="diagnostico" class="dark">
   <div class="wrap">
-    <span class="eyebrow rv">Fale com a COBRASQ</span>
-    <h2 class="rv" style="margin-top:18px">Sua carteira parada é <em>caixa adormecido.</em></h2>
-    <p class="lede rv">Conte o tamanho e o perfil da sua inadimplência. Devolvemos um diagnóstico e o caminho para reaver o que é seu.</p>
-    <div class="cta-row rv">
-      <a href="https://wa.me/5546988226533" class="btn btn--gold" target="_blank" rel="noopener">Falar no WhatsApp <span class="ar">→</span></a>
-      <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--ghost" target="_blank" rel="noopener">Negocie sua dívida</a>
-      <a href="mailto:contato@cobrasq.com.br" class="btn btn--ghost">contato@cobrasq.com.br</a>
+    <div class="diag-grid">
+      <div class="rv">
+        <span class="eyebrow">Fale com a COBRASQ</span>
+        <h2 style="margin-top:18px">Conte o tamanho da sua <em>inadimplência</em>.</h2>
+        <p class="lede" style="color:var(--d-text);margin-top:18px;max-width:24em">Devolvemos um diagnóstico da carteira e o caminho para reaver o que é seu. Sem custo, sem compromisso.</p>
+        <div class="diag-points">
+          <div>↳ Resposta em até 1 dia útil</div>
+          <div>↳ Análise feita à distância · atuação nacional</div>
+          <div>↳ Seus dados ficam só com a COBRASQ</div>
+        </div>
+      </div>
+      <div class="form-card rv" id="formCard">
+        <form id="diagForm">
+          <div class="fg"><label>Empresa</label><input name="empresa" required placeholder="Razão social ou nome fantasia"></div>
+          <div class="fg-2">
+            <div class="fg"><label>Setor</label><input name="setor" placeholder="Ex.: indústria, comércio"></div>
+            <div class="fg"><label>Nº de títulos / devedores</label><select name="titulos"><option>1 a 10</option><option>11 a 50</option><option>51 a 200</option><option>Mais de 200</option></select></div>
+          </div>
+          <div class="fg-2">
+            <div class="fg"><label>Valor estimado da carteira</label><select name="valor"><option>Até R$ 100 mil</option><option>R$ 100 mil a 500 mil</option><option>R$ 500 mil a 2 mi</option><option>Acima de R$ 2 mi</option></select></div>
+            <div class="fg"><label>Idade média da dívida</label><select name="idade"><option>Menos de 1 ano</option><option>1 a 2 anos</option><option>2 a 4 anos</option><option>Mais de 4 anos</option></select></div>
+          </div>
+          <div class="divln"></div>
+          <div class="fg-2">
+            <div class="fg"><label>Seu nome</label><input name="nome" required placeholder="Nome e cargo"></div>
+            <div class="fg"><label>WhatsApp</label><input name="tel" placeholder="(00) 00000-0000"></div>
+          </div>
+          <div class="fg"><label>E-mail</label><input name="email" type="email" required placeholder="voce@empresa.com.br"></div>
+          <button type="submit" class="btn">Pedir diagnóstico gratuito <span class="ar">→</span></button>
+        </form>
+        <div class="form-ok">
+          <div class="chk">✓</div>
+          <h3>Recebemos, <span id="okName">tudo certo</span>.</h3>
+          <p>Para adiantar seu diagnóstico, envie agora os dados pelo canal que preferir, já vão preenchidos.</p>
+          <div class="okbtns">
+            <a id="okWa" href="#" target="_blank" rel="noopener" class="btn" style="background:var(--accent);color:var(--ink);justify-content:center">Enviar pelo WhatsApp →</a>
+            <a id="okMail" href="#" class="btn btn--ghost" style="justify-content:center">Enviar por e-mail →</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ===================== DEVEDOR (porta discreta) ===================== -->
+<section class="soft dev-strip">
+  <div class="wrap">
+    <p><b>É você que deve?</b> A COBRASQ negocia com discrição, em condições que cabem no seu bolso, e, quitado o acordo, seu nome volta a ficar limpo.</p>
+    <a href="https://wa.me/5546988226533?text=Ol%C3%A1%2C%20quero%20negociar%20minha%20d%C3%ADvida." class="btn btn--line" target="_blank" rel="noopener">Negocie sua dívida <span class="ar">→</span></a>
   </div>
 </section>
 
@@ -626,6 +766,31 @@
   // WhatsApp flutuante (aparece ao rolar)
   const fab=document.getElementById('waFab');
   if(fab){const onF=()=>fab.classList.toggle('show',window.scrollY>600);onF();addEventListener('scroll',onF,{passive:true});}
+
+  // formulário de diagnóstico → WhatsApp + e-mail prontos
+  const diag=document.getElementById('diagForm');
+  if(diag){
+    diag.addEventListener('submit',e=>{
+      e.preventDefault();
+      const f=new FormData(diag), g=k=>(f.get(k)||'').toString().trim();
+      const empresa=g('empresa');
+      const linhas=[
+        'Empresa: '+empresa,
+        'Setor: '+g('setor'),
+        'Valor estimado da carteira: '+g('valor'),
+        'Nº de títulos/devedores: '+g('titulos'),
+        'Idade média da dívida: '+g('idade'),
+        'Contato: '+g('nome')+' · '+g('email')+' · '+g('tel')
+      ];
+      const texto='Olá, COBRASQ. Quero um diagnóstico da minha carteira.\n\n'+linhas.join('\n');
+      const wa='https://wa.me/5546988226533?text='+encodeURIComponent(texto);
+      const mail='mailto:contato@cobrasq.com.br?subject='+encodeURIComponent('Diagnóstico de carteira — '+empresa)+'&body='+encodeURIComponent(texto);
+      document.getElementById('okWa').href=wa;
+      document.getElementById('okMail').href=mail;
+      document.getElementById('okName').textContent=(g('nome').split(' ')[0]||'tudo certo');
+      document.getElementById('formCard').classList.add('done');
+    });
+  }
 </script>
 </body>
 </html>
